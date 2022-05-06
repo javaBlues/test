@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.tymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>SpringBoot</title>
+</head>
+<body>
+
+	<h1 th:utext="${message}"></h1>
+	<h2>Hello Spring BOT</h2>
+
+	<a th:href="@{/hello}">Hello</a>
+
+	<form class="well form-horizontal" th:action="@{/hello}" method="POST"
+		th:object="${person}">
+		<fieldset>
+
+			<!-- Text input-->
+
+			<input th:field="*{prenom}" placeholder="prenom" class="form-control">
+			<input th:field="*{nom}" placeholder="nom" class="form-control">
+			<!-- Button -->
+
+			<button th:type="submit" th:value="submit" class="btn btn-warning">
+				SUBMIT <span class="glyphicon glyphicon-send"></span>
+			</button>
+
+
+		</fieldset>
+	</form>
+</body>
+</html>
